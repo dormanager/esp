@@ -7,7 +7,7 @@ script:
 - git clone https://github.com/psksvp/espresso-ab-1.0
 - cd espresso-ab-1.0
 - ./configure CFLAGS="-O3 -mtune=native -march=native"
-- make
+- make 
 - cp ./src/espresso ../
 - cd ..
 - ./espresso out > esp_out1 &
