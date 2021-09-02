@@ -1,5 +1,6 @@
 script:
 - bzip2 -d tst2.bz2
+- python3 esp_input_gen.py
 - sudo add-apt-repository -y ppa:criu/ppa
 - sudo apt-get update
 - sudo apt install criu build-essential gcc
