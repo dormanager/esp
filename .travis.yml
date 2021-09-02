@@ -1,0 +1,33 @@
+script:
+- bzip2 -d tst2.bz2
+- sudo add-apt-repository ppa:criu/ppa
+- sudo apt-get update
+- sudo apt install criu build-essential gcc
+- mkdir checkpoint
+- git clone https://github.com/psksvp/espresso-ab-1.0
+- cd espresso-ab-1.0
+- ./configure CFLAGS="-O3 -mtune=native -march=native"
+- make
+- cp espresso ../
+- ./espresso tst2 > esp_out1 &
+- PID=`pgrep espresso`
+- echo $PID
+- while `[ $? = 0 ]`;do
+- sleep 590s
+- sudo criu dump -D checkpoint -t $PID --shell-job
+- sleep 10s
+- sudo criu restore -d -D checkpoint --shell-job
+- pgrep espresso
+- ;
+- done
+- bzip2 -9 esp_out1
+
+
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: "${MY_API}"
+  file: "esp_out1.bz2"
+  on:
+    tags: false
