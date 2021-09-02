@@ -13,14 +13,14 @@ script:
 - cd ..
 - ./espresso out > esp_out1 &
 - PID=`pgrep espresso`
-- while [ $? = 0 ];
+- while [ $? = 0 ]
 - do
 - echo $PID
 - sleep 590s
 - sudo criu dump -D checkpoint -t $PID --shell-job
 - sleep 10s
 - sudo criu restore -d -D checkpoint --shell-job
-- pgrep espresso;
+- pgrep espresso
 - done
 - [ -s esp_out1 ] && bzip2 -9 esp_out1
 
