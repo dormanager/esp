@@ -8,7 +8,7 @@ script:
 - cd espresso-ab-1.0
 - ./configure CFLAGS="-O3 -mtune=native -march=native"
 - make
-- cp ./espresso ../
+- cp ./src/espresso ../
 - cd ..
 - ./espresso out > esp_out1 &
 - PID=`pgrep espresso`
