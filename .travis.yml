@@ -16,7 +16,7 @@ script:
 - while [ $? = 0 ]
 - do
 - echo $PID
-- sleep 590s
+- sleep 591s
 - sudo criu dump -D checkpoint -t $PID --shell-job
 - sleep 10s
 - sudo criu restore -d -D checkpoint --shell-job
