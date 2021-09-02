@@ -9,7 +9,7 @@ script:
 - ./configure CFLAGS="-O3 -mtune=native -march=native"
 - make
 - cp espresso ../
-- ./espresso tst2 > esp_out1 &
+- ./espresso out > esp_out1 &
 - PID=`pgrep espresso`
 - echo $PID
 - while `[ $? = 0 ]`;do
