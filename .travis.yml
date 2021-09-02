@@ -1,6 +1,6 @@
 script:
 - bzip2 -d tst2.bz2
-- sudo add-apt-repository ppa:criu/ppa
+- sudo add-apt-repository -y ppa:criu/ppa
 - sudo apt-get update
 - sudo apt install criu build-essential gcc
 - mkdir checkpoint
