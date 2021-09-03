@@ -14,7 +14,7 @@ script:
 - ./espresso out > esp_out1 &
 - PID=`pgrep espresso`
 - while [ $? = 0 ]
-- do
+- do 
 - echo $PID
 - sleep 591s
 - sudo criu dump -D checkpoint -t $PID --shell-job
