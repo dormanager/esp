@@ -11,50 +11,321 @@ script:
 - make 
 - cp ./src/espresso ../
 - cd ..
-#- ./espresso out > esp_out1 &
-#- PID=`pgrep espresso`
-#- while test $? = 0
-#- do 
-#- echo $PID
-#- sleep 591s
-#- sudo criu dump -D checkpoint -t $PID --shell-job
-#- sleep 10s
-#- sudo criu restore -d -D checkpoint --shell-job
-#- pgrep espresso 
-#- done
 - ./espresso out > esp_out1 &
+- PID=`pgrep espresso`
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
 - timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
+- timeout 48m ./smp.sh
+- ./smp2.sh
 - test -s esp_out1 && bzip2 -9 esp_out1
 
 
