@@ -13,7 +13,7 @@ script:
 - cd ..
 - ./espresso out > esp_out1 &
 - PID=`pgrep espresso`
-- while [ $? = 0 ]
+- while test $? = 0
 - do 
 - echo $PID
 - sleep 591s
