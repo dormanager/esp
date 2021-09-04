@@ -23,7 +23,7 @@ script:
 #- pgrep espresso 
 #- done
 - ./espresso out > esp_out1 &
-- while sleep 1m; do echo "=====[ still running after seconds... ]====="; done &
+- while sleep 1m; do echo "=====[ still running after seconds... ]====="; done
 - test -s esp_out1 && bzip2 -9 esp_out1
 
 
