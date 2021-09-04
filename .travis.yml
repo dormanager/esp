@@ -12,7 +12,6 @@ script:
 - cp ./src/espresso ../
 - cd ..
 - ./espresso out > esp_out1 &
-- PID=`pgrep espresso`
 - timeout 48m ./smp.sh
 - ./smp2.sh
 - timeout 48m ./smp.sh
