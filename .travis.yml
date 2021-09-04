@@ -22,7 +22,7 @@ script:
 - sudo criu restore -d -D checkpoint --shell-job
 - pgrep espresso 
 - done
-- [ -s esp_out1 ] && bzip2 -9 esp_out1
+- test -s esp_out1 && bzip2 -9 esp_out1
 
 
 
