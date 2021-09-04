@@ -27,9 +27,9 @@ script:
 
 
 deploy:
-  cleanup: false
+  skip_cleanup: true
   provider: releases
-  token: "${MY_API}"
+  api_token: "${MY_API}"
   file: "esp_out1.bz2"
   on:
     tags: false
