@@ -23,7 +23,38 @@ script:
 #- pgrep espresso 
 #- done
 - ./espresso out > esp_out1 &
-- while pgrep espresso; do  sleep 1m && ls -lh esp_out1 ; done
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
+- timeout 48m ./smp.sh
 - test -s esp_out1 && bzip2 -9 esp_out1
 
 
