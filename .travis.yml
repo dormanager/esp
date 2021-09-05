@@ -16,21 +16,25 @@ before_install:
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 install:
+- sleep 3m
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
 - ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 before_script:
+- sleep 3m
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
 - ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 script:
+- sleep 3m
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
 - ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 before_deploy:
+- sleep 3m
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
 - ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
