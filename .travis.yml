@@ -12,27 +12,27 @@ before_install:
 - cp ./src/espresso ../
 - cd ..
 - ./espresso out > esp_out1 &
-- timeout 47m ./smp.sh
+- ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 install:
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- timeout 48m ./smp.sh
+- ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 before_script:
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- timeout 48m ./smp.sh
+- ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 script:
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- timeout 48m ./smp.sh
+- ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 before_deploy:
 - test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- timeout 48m ./smp.sh
+- ./smp2.sh
 - if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 - test -s esp_out1 && bzip2 -9 esp_out1
 
