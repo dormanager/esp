@@ -1,46 +1,17 @@
-before_install:
+install:
 - bzip2 -d tst2.bz2 
 - python3 esp_input_gen.py
-- sudo add-apt-repository -y ppa:criu/ppa
-- sudo apt-get update
-- sudo apt install criu build-essential gcc
-- mkdir checkpoint
 - git clone https://github.com/psksvp/espresso-ab-1.0
 - cd espresso-ab-1.0
 - ./configure CFLAGS="-O3 -mtune=native -march=native"
 - make 
 - cp ./src/espresso ../
 - cd ..
-- ./espresso out > esp_out1 &
-- ./smp2.sh
-- if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
-
-install:
-- sleep 3m
-- test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- ./smp2.sh
-- if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
-
-before_script:
-- sleep 3m
-- test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- ./smp2.sh
-- if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 
 script:
-- sleep 3m
-- test -f ./done || sudo criu restore -d -D checkpoint --shell-job
+- ./espresso out > esp_out1 &
 - ./smp2.sh
-- if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
-
-before_deploy:
-- sleep 3m
-- test -f ./done || sudo criu restore -d -D checkpoint --shell-job
-- ./smp2.sh
-- if pgrep espresso; then sudo criu dump -D checkpoint -t `pgrep espresso` --shell-job ;else echo done > done; fi
 - test -s esp_out1 && bzip2 -9 esp_out1
-
-
 
 deploy:
   skip_cleanup: true
