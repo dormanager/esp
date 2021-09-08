@@ -5,7 +5,7 @@ o = open("./out", "w")
 o.write('.i 608\n.o 1\n')
 t = 0
 for i in f:
-	if t > 610000:
+	if t > 650000:
 		#o.write('{0:0608b} {1:032b}\n'.format(int(i[0:152], 16), int(i[152:], 16)))
 		o.write('{0:0608b} 1\n'.format(int(i[0:152], 16)))
 	t += 1
