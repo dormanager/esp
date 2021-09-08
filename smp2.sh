@@ -1,3 +1,3 @@
 #!/bin/bash
-timeout --preserve-status 49m ./smp.sh
+timeout --preserve-status 50m ./smp.sh
 exit 0
